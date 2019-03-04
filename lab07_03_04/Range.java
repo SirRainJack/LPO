@@ -4,23 +4,53 @@ import java.util.Iterator;
 
 public class Range implements Iterable<Integer> {
 
+//ATTRIBUTES:
     private final int start, end;
 
-    // ranges from start (inclusive) to end (exclusive)
-    public Range(int start, int end) {
-        this.start = start;
-        this.end = end;
-    }
 
-    // ranges from 0 (inclusive) to end (exclusive)
+//CONSTRUCTORS:
+
+    //ranges from start (inclusive) to end (exclusive)
+    public Range(int start, int end) {
+        if(start <= end){
+            this.start = start;
+            this.end = end;
+        }else{
+            this.start = end;
+            this.end = start;
+        }
+        
+    }
+    
+    //ranges from 0 (inclusive) to end (exclusive)
     public Range(int end) {
         this(0,end);
     }
 
-    @Override
-    public Iterator<Integer> iterator() {
-	// completare usando la classe RangeIterator
+
+//METHODS:
+
+    //STATIC:
+        //valutazione di un intervallo (n,m)  vuoto||pieno
+        static boolean isEmptyRange(int start, int end){
+            return start < end;
+        }
+
+    boolean isEmpty(){
+        return isEmpty(this.start, this.end);
     }
 
+    int leftEdge(){
+        return this.start;
+    }
+
+    int rightEdge(){
+        return this.end;
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return RangeIterator(this);
+    }
 
 }
