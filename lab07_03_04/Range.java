@@ -22,6 +22,5 @@ public class Range implements Iterable<Integer> {
 	// completare usando la classe RangeIterator
     }
 
-    sono stronzo in culo - Dev
 
 }
