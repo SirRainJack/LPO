@@ -18,7 +18,9 @@ class RangeIterator implements Iterator<Integer> {
 
 //METHODS:
     boolean hasNext(){
-        return !Range.isEmptyRange(r.leftEdge()+i, r.rightEdge());
+        return r.isEmpty(r.leftEdge()+i, r.rightEdge());
+        //il metodo viene chiamato sull'istanza r e non sulla classe Range cosicche
+        //in caso di modifica della classe del campo r il metodo resti funzionante
     }
 
     int next(){

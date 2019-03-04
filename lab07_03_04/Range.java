@@ -32,7 +32,7 @@ public class Range implements Iterable<Integer> {
 
     //STATIC:
         //valutazione di un intervallo (n,m)  vuoto||pieno
-        static boolean isEmptyRange(int start, int end){
+        static boolean isEmpty(int start, int end){
             return start < end;
         }
 
