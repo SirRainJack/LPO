@@ -8,12 +8,13 @@ public class Range implements Iterable<Integer> {
 
     // ranges from start (inclusive) to end (exclusive)
     public Range(int start, int end) {
-	// completare
+        this.start = start;
+        this.end = end;
     }
 
     // ranges from 0 (inclusive) to end (exclusive)
     public Range(int end) {
-        this
+        this(0,end);
     }
 
     @Override
